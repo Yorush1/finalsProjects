@@ -14,10 +14,10 @@ while True:
         if choice == 1:
             name = input("Enter Student name: ")
 
-            if name == "":               #stops user from entering a no name idk
+            if name == "":   #stops user from entering a no name idk
                 print("Name can't be empty")
             elif name in studs:
-                print(name, "is already here.")
+                print(name, "is already here.") #stops user from entering the same name
             else:
                 studs[name] = "Not marked"
                 print("Student added.")
@@ -25,12 +25,12 @@ while True:
         elif choice == 2:
             name = input("Enter student name: ")
             
-            if name in studs:
-                stats = input("Present or Absent: ").lower()
+            if name in studs:   #checks if student exists
+                status = input("Present or Absent: ").lower()
 
-                if stats == "present":
+                if status == "present":     #marks student present if present is typed
                     studs[name] = "Present"
-                elif stats == "absent":
+                elif status == "absent":   #same here vruv
                     studs[name] = "Absnet"
                 else:
                     print("Invalid")
@@ -38,11 +38,11 @@ while True:
                 print("Student not found") #shows when student aint present?
 
         elif choice == 3:
-            if not studs:
+            if not studs:  #if there's nothing in the studs dict, this code runs
                 print("No students")
-            else:
-                for name, stats in studs.items():
-                    print(name, "-", stats)
+            else:            
+                for name, status in studs.items(): #but if there is, it prints the name and status if absent/presnet
+                    print(name, "-", status)
 
         elif choice == 4:
             break
