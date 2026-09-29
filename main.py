@@ -1,7 +1,7 @@
 studs = {} #ts stands for students not actual studs
 
 while True:
-    print("___ATTENDANCE MON SYSTEM___")
+    print("___ATTENDANCE MAN SYSTEM___")
     print("1. Add student")
     print("2. Mark attendance")
     print("3. View attendance")
@@ -16,11 +16,13 @@ while True:
 
             if name == "":   #stops user from entering a no name idk
                 print("Name can't be empty")
-            elif name in studs:
-                print(name, "is already here.") #stops user from entering the same name
+            elif name in studs:       #stops user from entering the same name if its already in studs
+                print(name, "is already here.") 
             else:
                 studs[name] = "Not marked"
                 print("Student added.")
+                print("")
+
                 
         elif choice == 2:
             name = input("Enter student name: ")
@@ -35,7 +37,8 @@ while True:
                 else:
                     print("Invalid")
             else:
-                print("Student not found") #shows when student aint present?
+                print("Student not found") #shows when student aint found
+
 
         elif choice == 3:
             if not studs:  #if there's nothing in the studs dict, this code runs
